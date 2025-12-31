@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS Marketing | Official Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HS Marketing</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about-hero">
+        <div class="overlay">
+            <img src="222-removebg-preview.png" alt="Owner" class="owner-pic">
+            <h1>HS Marketing</h1>
+            <p>Welcome to our official store. We provide quality and trust.</p>
+        </div>
+    </section>
+
+    <section id="home" class="container">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-grid" id="product-container">
+            </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <h3>Place Your Order</h3>
+            <form action="https://formspree.io/f/mnjqwdog" method="POST">
+                <input type="text" name="Product" id="modalProduct" readonly>
+                <input type="text" name="Phone" placeholder="Mobile Number" required>
+                <input type="email" name="Email" placeholder="Your Gmail" required>
+                <textarea name="Address" placeholder="Full Address" required></textarea>
+                <input type="text" name="Landmark" placeholder="Famous nearby place" required>
+                <button type="submit" class="submit-btn">Confirm Order</button>
+                <button type="button" class="close-btn" onclick="closeModal()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="social-box">
+            <p><strong>WhatsApp:</strong> +92 3277114455</p>
+            <p><strong>Email:</strong> huzifasa4757@gmail.com</p>
+            <div class="links">
+                <a href="https://www.tiktok.com/@mrhuzifa4?_r=1&_t=ZS-92dV12ttoCi">TikTok</a>
+                <a href="https://www.instagram.com/huzifasa4?igsh=MTZ6OXBkMzl5c21zMw==">Instagram</a>
+            </div>
+        </div>
+        <div class="links">
+    <a href="https://wa.me/923277114455" target="_blank" class="whatsapp-btn">WhatsApp</a>
+
+</div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

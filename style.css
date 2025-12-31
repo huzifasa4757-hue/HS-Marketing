@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #ff4757; /* Attractive Red/Coral for Buttons */
+    --dark-bg: #0f172a;       /* Deep Navy Blue for Luxury Look */
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --accent-gradient: linear-gradient(135deg, #ff4757, #ff6b81);
+}
+
+body {
+    background-color: #f8fafc; /* Halka sa greyish white taake aankhon ko sukoon miley */
+    color: var(--text-main);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* Navigation */
+nav {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+
+/* About Section with Background Image */
+.about-hero {
+    height: 100vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1350&q=80'); 
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect: scroll karte waqt image fix rahegi */
+    display: flex; align-items: center; justify-content: center;
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.overlay { background: rgba(0,0,0,0.5); padding: 40px; border-radius: 15px; color: white; }
+.owner-pic { width: 150px; height: 150px; border-radius: 50%; border: 5px solid gold; margin-bottom: 15px; }
+
+/* Product Grid (Responsive) */
+.container { padding: 100px 5%; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Product Card Pop-up Effect */
+.product-card {
+    background: #ffffff;
+    border-radius: 25px; /* Zyada round corners modern lagte hain */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Hover Effect: Card popup karega */
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Image kharab nahi hogi */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.product-card:hover { transform: scale(1.08); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.product-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* Modal & Buttons */
+.modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; }
+.modal-content { background:white; width:90%; max-width:400px; margin: 100px auto; padding:20px; border-radius:10px; }
+input, textarea { width:100%; margin:10px 0; padding:10px; border:1px solid #ccc; }
+.submit-btn { background: #28a745; color:white; border:none; padding:10px 20px; cursor:pointer; width:100%; }
+.close-btn { background: #dc3545; color:white; border:none; padding:5px 10px; margin-top:10px; cursor:pointer; }
+
+/* Contact Transitions */
+.social-box a {
+    display: inline-block; padding: 10px 20px; margin: 10px;
+    background: #007bff; color: white; text-decoration: none; border-radius: 5px;
+    transition: background 0.3s;
+}
+.social-box a:hover { background: #0056b3; transform: translateY(-5px); }
+
+/* Mobile View Adjustments */
+@media (max-width: 600px) {
+    .nav-links { font-size: 14px; }
+    .about-hero h1 { font-size: 1.8rem; }
+}
+/* Ye code aapke Home section ko attractive banayega */
+#home {
+    padding: 100px 5%;
+    min-height: 100vh;
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #ffffff, #cfd8dc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Background halka halka move karega */
+    
+    /* Pattern Overlay (Store Look) */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background animation ka logic */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Products Title ko aur chamkayein */
+.section-title {
+    font-size: 3rem;
+    color: #1e293b;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 60px;
+}
+
+/* Products ke grid ko set karne ke liye */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+.contact-section {
+    padding: 100px 5%;
+    text-align: center;
+    /* Ek professional dark background image */
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    color: white;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.social-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glass effect */
+    padding: 40px;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-box p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Social Links with Transitions */
+.links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    background: var(--accent-gradient);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+/* Hover Transition: Button popup aur shine karega */
+.links a:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.4);
+    filter: brightness(1.2);
+}
